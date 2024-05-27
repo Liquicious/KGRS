@@ -27,7 +27,7 @@ def start(args, data, show_topk, show_titles):
                 start += args.batch_size
 
     user_id = int(input())
-    while -1 < user_id < 138482:
+    while -1 < user_id < n_user:
         show_user_predictions(sess, model, user_id, train_record, item_set,
                               args.batch_size, show_titles, args.dataset)
         user_id = int(input())
@@ -185,7 +185,6 @@ def show_user_predictions(sess, model, user, train_record, item_set, batch_size,
         for item, score in zip(items, scores):
             item_score_map[item] = score
         start += batch_size
-    # padding the last incomplete minibatch if exists
     if start < len(test_item_list):
         items, scores = model.get_scores(
             sess, {model.user_indices: [user] * batch_size,
