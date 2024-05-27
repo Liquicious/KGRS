@@ -1,0 +1,26 @@
+parser.add_argument('--dataset', type=str, default='1', help='which dataset to use')
+parser.add_argument('--aggregator', type=str, default='sum', help='which aggregator to use')
+parser.add_argument('--n_epochs', type=int, default=5, help='the number of epochs')
+parser.add_argument('--neighbor_sample_size', type=int, default=4, help='the number of neighbors to be sampled')
+parser.add_argument('--dim', type=int, default=32, help='dimension of user and entity embeddings')
+parser.add_argument('--n_iter', type=int, default=2, help='number of iterations when computing entity representation')
+parser.add_argument('--batch_size', type=int, default=65536, help='batch size')
+parser.add_argument('--l2_weight', type=float, default=1e-7, help='weight of l2 regularization')
+parser.add_argument('--lr', type=float, default=2e-2, help='learning rate')
+parser.add_argument('--ratio', type=float, default=1, help='size of training dataset')
+
+
+n users: 138483
+n items: 7743
+n entities: 34891
+n relations: 5
+ratings: 11 mil
+
+epoch 0    train auc: 0.8211  f1: 0.7305    eval auc: 0.7922  f1: 0.7052    test auc: 0.7927  f1: 0.7061
+epoch 1    train auc: 0.8463  f1: 0.7547    eval auc: 0.8021  f1: 0.7164    test auc: 0.8026  f1: 0.7172
+epoch 2    train auc: 0.8723  f1: 0.7793    eval auc: 0.8026  f1: 0.7157    test auc: 0.8027  f1: 0.7160
+epoch 3    train auc: 0.8974  f1: 0.8056    eval auc: 0.7980  f1: 0.7109    test auc: 0.7983  f1: 0.7116
+epoch 4    train auc: 0.9152  f1: 0.8252    eval auc: 0.7917  f1: 0.7047    test auc: 0.7918  f1: 0.7053
+epoch 5    train auc: 0.9273  f1: 0.8401    eval auc: 0.7853  f1: 0.7002    test auc: 0.7854  f1: 0.7007
+
+
